@@ -1,0 +1,80 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": [
+        "sway/workspaces",
+        "custom/media"
+        //"sway/window"
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "wireplumber",
+        "network",
+        "cpu",
+        "memory",
+        "tray",
+        "custom/power"
+    ],
+    // Modules configuration
+    "sway/workspaces": {
+         "format": "{name}: {icon}",
+         "format-icons": {
+             "1": "󰣇 ",
+             "2": " ",
+             "3": " ",
+             "4": " ",
+             "5": "󰙯 ",
+             "6": "󰊯 ",
+             "7": " ",
+             "8": "󰘧 ",
+             "9": "󰒠 ",
+             "10": "󰏉 ",
+             "urgent": " ",
+             "default": " "
+         }
+        },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+         "icon-size": 21,
+         "spacing": 10,
+         "icons": {
+        }
+    },
+    "clock": {
+        "timezone": "Norway/Oslo",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%H:%M | %d-%m-%y} ",
+        //"format-alt": " {:%d-%m-%y}   "
+    },
+    "cpu": {
+        "interval": 5,
+        "format": " {usage}%   ",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {}%   "
+    },
+    "network": {
+        //"interface": "wlp2*", // (Optional) To force the use of this interface
+        //"format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": " {bandwidthUpBits} | {bandwidthDownBits}  ",
+        "tooltip-format": "{ifname} via {gwaddr} 󰖟 ",
+        "format-linked": "{ifname} (No IP) 󰖟 ",
+        "format-disconnected": "Disconnected ⚠ ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "wireplumber": {
+        "format": " {volume}% {icon} ",
+        "format-muted": "  ",
+        "on-click": "helvum",
+        "format-icons": ["  ", "  ", "  "],
+        "format-muted": "  ",
+    },
+}
