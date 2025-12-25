@@ -42,6 +42,8 @@ alias em="emacs -nw"
 # dot dot // go back one directory
 alias ..="cd .."
 
+alias sbcl="rlwrap sbcl"
+
 # keep pathe afther wuiting yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
