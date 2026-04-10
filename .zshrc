@@ -10,6 +10,9 @@ zstyle :compinstall filename '/home/th/.zshrc'
 autoload -Uz compinit
 compinit
 
+# make C-s not freeze the terminal
+stty -ixon
+
 # onmisharp path
 export PATH="$HOME/.dotnet/tools:$PATH"
 
@@ -34,6 +37,9 @@ alias em="emacs -nw"
 alias ..="cd .."
 
 alias sbcl="rlwrap sbcl"
+
+#thefuck
+eval $(thefuck --alias)
 
 # keep pathe afther wuiting yazi
 function y() {
