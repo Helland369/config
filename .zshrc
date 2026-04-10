@@ -105,6 +105,11 @@ source <(fzf --zsh)
 # Set up zoxide completion
 eval "$(zoxide init zsh)"
 
+# fzf tab
+# https://github.com/aloxaf/fzf-tab?tab=readme-ov-file
+autoload -U compinit; compinit
+source ~/fzf-tab/fzf-tab.plugin.zsh
+
 # plugins
 
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
