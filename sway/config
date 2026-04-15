@@ -24,8 +24,9 @@ default_floating_border pixel 2
 
 # Keyboard
 input type:keyboard {
-  xkb_layout no
-  xkb_variant nodeadkeys
+  xkb_layout "no, us"
+  xkb_variant "nodeadkeys"
+  xkb_options "grp:alt_shift_toggle"
 }
 
 # Auto start
@@ -33,6 +34,7 @@ exec Xwayland
 exec easyeffects --gapplication-service &
 exec emacs --fg-daemon
 exec waybar
+exec gnome-keyring-daemon --start --components=secrets
 
 # Screen sharing
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
