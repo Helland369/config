@@ -26,7 +26,7 @@ default_floating_border pixel 2
 input type:keyboard {
   xkb_layout "no, us"
   xkb_variant "nodeadkeys"
-  xkb_options "grp:alt_shift_toggle"
+  xkb_options "grp:ctrl_shift_toggle"
 }
 
 # Auto start
