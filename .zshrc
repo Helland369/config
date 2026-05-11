@@ -117,3 +117,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## autosuggestion config
 bindkey "^[^M" autosuggest-accept
+
+[ -n "$EAT_SHELL_INTEGRATION_DIR" ] && \
+  source "$EAT_SHELL_INTEGRATION_DIR/zsh"
