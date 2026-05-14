@@ -1,3 +1,5 @@
+/* Kanagawa Wave — Waybar Theme */
+
 * {
     font-family: iosevka;
     font-size: 13px;
@@ -5,58 +7,164 @@
     margin: 0;
 }
 
-window#waybar{
-    color: #c8c093;
-    background-color:#16161D;
+/* === Kanagawa Wave palette ===
+   Background:  #1F1F28 (sumiInk1)
+   Surface:     #2A2A37 (sumiInk3)
+   Overlay:     #363646 (sumiInk4)
+   Text:        #DCD7BA (fujiWhite)
+   Muted:       #727169 (fujiGray)
+   Blue:        #7E9CD8 (crystalBlue)
+   Violet:      #957FB8 (oniViolet)
+   Green:       #76946A (autumnGreen)
+   Teal:        #6A9589 (waveAqua1)
+   Aqua:        #7AA89F (waveAqua2)
+   Yellow:      #C0A36E (boatYellow2)
+   Orange:      #FFA066 (surimiOrange)
+   Red:         #C34043 (autumnRed)
+   Pink:        #D27E99 (sakuraPink)
+   =========================== */
+
+window#waybar {
+    color: #DCD7BA;
+    background-color: #1F1F28;
+    border-bottom: 1px solid #363646;
+}
+
+/* ── Workspaces ── */
+#workspaces button {
+    color: #727169;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0 6px;
+    transition: color 0.2s, background-color 0.2s;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
-    color: #C0A36E;
-    background-color: #76946a; 
-}
-
-#workspaces button.urgent {
-    color: #c34043;
-}
-
-#workspaces button.visible {
-    color: #c8c093;
-}
-
-#workspaces button {
-    color: #c8c093;
-}
-
-#network.disabled {
-    background-color: #c34043;
-}
-
-#network.ethernet {
-    background-color: #76946a;
-}
-
-#cpu {
+    color: #1F1F28;
     background-color: #7E9CD8;
 }
 
+#workspaces button.visible {
+    color: #DCD7BA;
+}
+
+#workspaces button.urgent {
+    color: #1F1F28;
+    background-color: #C34043;
+}
+
+#workspaces button:hover {
+    color: #DCD7BA;
+    background-color: #363646;
+}
+
+/* ── Clock ── */
+#clock {
+    color: #DCD7BA;
+    background-color: transparent;
+    padding: 0 8px;
+}
+
+/* ── CPU ── */
+#cpu {
+    color: #1F1F28;
+    background-color: #7E9CD8;
+    padding: 0 10px;
+}
+
+/* ── Memory ── */
 #memory {
+    color: #1F1F28;
     background-color: #957FB8;
+    padding: 0 10px;
 }
 
-/* #clock { */
-/*     background-color: #6a9589; */
-/* } */
-
-#tray {
-    background-color: #72A7BC;
+/* ── Network ── */
+#network {
+    color: #1F1F28;
+    background-color: #76946A;
+    padding: 0 10px;
 }
 
+#network.wifi {
+    background-color: #6A9589;
+}
+
+#network.ethernet {
+    background-color: #76946A;
+}
+
+#network.disconnected,
+#network.disabled {
+    color: #DCD7BA;
+    background-color: #C34043;
+}
+
+/* ── Audio (wireplumber) ── */
 #wireplumber {
-    background-color: #2D4F67;
-    
+    color: #1F1F28;
+    background-color: #7AA89F;
+    padding: 0 10px;
 }
 
 #wireplumber.muted {
-    background-color: #c34043;
+    color: #DCD7BA;
+    background-color: #C34043;
+}
+
+/* ── Battery ── */
+/* #battery { */
+/*     color: #1F1F28; */
+/*     background-color: #76946A; */
+/*     padding: 0 10px; */
+/*     transition: background-color 0.3s; */
+/* } */
+
+/* #battery.charging, */
+/* #battery.plugged { */
+/*     color: #1F1F28; */
+/*     background-color: #6A9589; */
+/* } */
+
+/* #battery.full { */
+/*     color: #1F1F28; */
+/*     background-color: #76946A; */
+/* } */
+
+/* #battery.warning:not(.charging) { */
+/*     color: #1F1F28; */
+/*     background-color: #C0A36E; */
+/* } */
+
+/* #battery.critical:not(.charging) { */
+/*     color: #DCD7BA; */
+/*     background-color: #C34043; */
+/*     animation: blink 1s step-end infinite; */
+/* } */
+
+@keyframes blink {
+    to { background-color: #FF5D62; }
+}
+
+/* ── Tray ── */
+#tray {
+    background-color: #2A2A37;
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #C34043;
+}
+
+/* ── Custom media ── */
+#custom-media {
+    color: #D27E99;
+    background-color: transparent;
+    padding: 0 8px;
 }
