@@ -37,6 +37,9 @@ exec emacs --fg-daemon
 exec waybar
 exec gnome-keyring-daemon --start --components=secrets
 
+# sway lock auto lock after 15 min
+exec swayidle -w timeout 900 'swaylock -f -c 000000' before-sleep 'swaylock -f -c 000000'
+
 # Screen sharing
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
@@ -48,6 +51,9 @@ bindsym $mod+Shift+e exec emacsclient -c -a emacs
 bindsym $mod+g exec swaync-client -t
 bindsym $mod+Shift+n exec flameshot gui
 bindsym $mod+Shift+m exec flameshot screen
+
+# Sway lcok screen
+bindsym $mod+Shift+t exec swaylock -c 000000
 
 # Basics:
 #
